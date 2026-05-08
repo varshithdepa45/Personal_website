@@ -37,7 +37,8 @@ export const SITE = {
   name: "D Varshith Reddy",
   initials: "DVR",
   role: "AI Developer & Full-Stack Builder",
-  email: "varshith@example.com",
+  email: "varshithreddy987@gmail.com",
+  phone: "+91 9059845457",
   resumeUrl: `${BASE_PATH}/resume.pdf`,
 };
 
@@ -52,9 +53,21 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const SOCIALS: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com/", icon: Github },
-  { label: "LinkedIn", href: "https://linkedin.com/", icon: Linkedin },
-  { label: "Email", href: "mailto:varshith@example.com", icon: Mail },
+  {
+    label: "GitHub",
+    href: "https://github.com/varshithdepa45",
+    icon: Github,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/varshith-reddy-98b701310",
+    icon: Linkedin,
+  },
+  {
+    label: "Email",
+    href: "mailto:varshithreddy987@gmail.com",
+    icon: Mail,
+  },
 ];
 
 export const STATS: Stat[] = [
