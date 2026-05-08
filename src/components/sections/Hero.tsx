@@ -16,6 +16,8 @@ import { Button } from "@/components/ui/button";
 import { SOCIALS } from "@/lib/constants";
 import { smoothScrollTo } from "@/lib/utils";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const orbitItems = [
   { icon: Brain, label: "AI", angle: 0 },
   { icon: Code2, label: "Frontend", angle: 90 },
@@ -165,16 +167,16 @@ export function Hero() {
             <div className="absolute inset-1/4 flex items-center justify-center">
               <div className="relative flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br from-blue-500/30 via-purple-500/30 to-fuchsia-500/30 backdrop-blur-2xl">
                 <div className="absolute inset-0 animate-pulse-glow rounded-full border border-white/20" />
-                <div className="flex h-1/2 w-1/2 flex-col items-center justify-center gap-0.5 rounded-full border border-white/20 bg-black/40 px-2 text-center backdrop-blur-xl">
-                  <span className="bg-gradient-to-br from-white via-purple-200 to-fuchsia-300 bg-clip-text font-display text-xs font-medium uppercase tracking-[0.32em] text-transparent">
-                    D
-                  </span>
-                  <span className="bg-gradient-to-br from-white via-purple-200 to-fuchsia-300 bg-clip-text font-display text-base font-bold uppercase leading-none tracking-tight text-transparent sm:text-lg">
-                    VARSHITH
-                  </span>
-                  <span className="bg-gradient-to-br from-white via-purple-200 to-fuchsia-300 bg-clip-text font-display text-base font-bold uppercase leading-none tracking-tight text-transparent sm:text-lg">
-                    REDDY
-                  </span>
+                <div className="relative h-2/3 w-2/3 overflow-hidden rounded-full border-2 border-white/30 bg-black shadow-2xl shadow-purple-500/40">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${BASE_PATH}/profile.jpg`}
+                    alt="Varshith Reddy"
+                    width={400}
+                    height={400}
+                    loading="eager"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
               </div>
             </div>
