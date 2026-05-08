@@ -61,7 +61,7 @@ export const STATS: Stat[] = [
   { label: "Projects Built", value: 18, suffix: "+", icon: FolderGit2 },
   { label: "Hackathons", value: 7, icon: Trophy },
   { label: "Technologies", value: 25, suffix: "+", icon: Zap },
-  { label: "GitHub Contributions", value: 800, suffix: "+", icon: GitBranch },
+  { label: "GitHub Contributions", value: 300, suffix: "+", icon: GitBranch },
 ];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
@@ -143,7 +143,7 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["Next.js", "TypeScript", "Python", "TensorFlow", "MongoDB", "Mapbox"],
     github: "https://github.com/",
-    demo: "https://example.com/",
+    demo: "https://varshithdepa45.github.io/Tracenet-ai/",
     accent: "from-blue-500 via-purple-500 to-fuchsia-500",
     icon: MapPin,
   },
@@ -162,7 +162,6 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["React", "Node.js", "Express", "Python", "PostgreSQL", "Socket.IO"],
     github: "https://github.com/",
-    demo: "https://example.com/",
     accent: "from-cyan-400 via-blue-500 to-purple-500",
     icon: Truck,
   },
@@ -181,7 +180,6 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["Python", "OpenCV", "PyTorch", "FastAPI", "Next.js", "Firebase"],
     github: "https://github.com/",
-    demo: "https://example.com/",
     accent: "from-amber-400 via-pink-500 to-purple-500",
     icon: Sun,
   },
