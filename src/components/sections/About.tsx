@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { User } from "lucide-react";
 
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Counter } from "@/components/Counter";
 import { ABOUT_HIGHLIGHTS, STATS } from "@/lib/constants";
+
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export function About() {
   return (
@@ -33,11 +34,24 @@ export function About() {
                 <div className="absolute inset-0 bg-grid-pattern bg-[size:32px_32px] opacity-[0.15]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.25),transparent_60%)]" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                  <div className="mb-6 flex h-32 w-32 items-center justify-center rounded-full border border-white/15 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-fuchsia-500/20 backdrop-blur-2xl">
-                    <User className="h-12 w-12 text-white/80" />
+                  <div className="relative mb-6 h-40 w-40">
+                    <div className="absolute inset-0 -z-10 animate-pulse-glow rounded-full bg-gradient-to-br from-blue-500/40 via-purple-500/40 to-fuchsia-500/40 blur-2xl" />
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-fuchsia-500 p-[2px]">
+                      <div className="h-full w-full overflow-hidden rounded-full bg-black">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={`${BASE_PATH}/profile.jpg`}
+                          alt="Varshith Reddy"
+                          width={160}
+                          height={160}
+                          loading="eager"
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    </div>
                   </div>
                   <p className="bg-gradient-to-r from-blue-300 via-purple-300 to-fuchsia-300 bg-clip-text font-display text-2xl font-semibold text-transparent">
-                    D Varshith Reddy
+                    Varshith Reddy
                   </p>
                   <p className="mt-1 text-sm text-white/60">
                     AI Developer · Full-Stack Builder

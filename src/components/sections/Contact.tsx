@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import {
+  AlertCircle,
   CheckCircle2,
   Download,
   Github,
@@ -19,20 +20,63 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { SITE } from "@/lib/constants";
 
-type Status = "idle" | "submitting" | "sent";
+type Status = "idle" | "submitting" | "sent" | "error";
+
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/varshithreddy987@gmail.com";
 
 export function Contact() {
   const [status, setStatus] = useState<Status>("idle");
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+    website: "", // honeypot
+  });
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (status === "submitting") return;
+    if (form.website) return; // bot caught
     setStatus("submitting");
-    await new Promise((r) => setTimeout(r, 1400));
-    setStatus("sent");
-    setForm({ name: "", email: "", message: "" });
-    setTimeout(() => setStatus("idle"), 3500);
+    setErrorMsg(null);
+
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          _subject: `New portfolio message from ${form.name}`,
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
+      const data = (await res.json().catch(() => null)) as
+        | { success?: string | boolean }
+        | null;
+      if (data && data.success === false) {
+        throw new Error("FormSubmit rejected the request");
+      }
+
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "", website: "" });
+      setTimeout(() => setStatus("idle"), 4500);
+    } catch (err) {
+      console.error(err);
+      setErrorMsg(
+        "Couldn't send right now. Email me directly at " + SITE.email + "."
+      );
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 6000);
+    }
   };
 
   return (
@@ -117,10 +161,45 @@ export function Contact() {
                 />
               </div>
 
+              {/* Honeypot — hidden from humans, bots fill it and get blocked */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute h-0 w-0 overflow-hidden opacity-0"
+              >
+                <label htmlFor="website">Website</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={form.website}
+                  onChange={(e) =>
+                    setForm((f) => ({ ...f, website: e.target.value }))
+                  }
+                />
+              </div>
+
+              {status === "error" && errorMsg && (
+                <div className="flex items-start gap-2 rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+                  <AlertCircle className="mt-0.5 h-4 w-4 flex-shrink-0" />
+                  <span>{errorMsg}</span>
+                </div>
+              )}
+
+              {status === "sent" && (
+                <div className="flex items-start gap-2 rounded-xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0" />
+                  <span>
+                    Thanks — your message is on its way to {SITE.email}.
+                  </span>
+                </div>
+              )}
+
               <Button
                 type="submit"
                 size="lg"
-                disabled={status !== "idle"}
+                disabled={status === "submitting"}
                 className="w-full sm:w-auto"
               >
                 {status === "submitting" && (
@@ -133,6 +212,12 @@ export function Contact() {
                   <>
                     <CheckCircle2 className="h-4 w-4" />
                     Message Sent
+                  </>
+                )}
+                {status === "error" && (
+                  <>
+                    <AlertCircle className="h-4 w-4" />
+                    Try Again
                   </>
                 )}
                 {status === "idle" && (
