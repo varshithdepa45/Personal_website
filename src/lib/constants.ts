@@ -9,6 +9,7 @@ import {
   Wrench,
   MapPin,
   ShieldCheck,
+  Sun,
   Rocket,
   Trophy,
   GitBranch,
@@ -194,6 +195,31 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/varshithdepa45/IIITh_INFINIUM_2026",
     accent: "from-emerald-400 via-cyan-500 to-blue-500",
     icon: Database,
+  },
+  {
+    id: "heliomind-ai",
+    title: "HelioMind AI",
+    tagline: "AI-Powered Rooftop Solar Intelligence",
+    description:
+      "A rooftop solar intelligence platform that analyzes roofs, scores solar suitability, parses electricity bills, and recommends pay-per-watt installations from one dashboard.",
+    features: [
+      "AI rooftop analysis with YOLOv8 and OpenCV",
+      "Solar suitability scoring",
+      "Electricity bill OCR",
+      "Weather-aware yield recommendations",
+      "Pay-per-watt savings and ROI modeling",
+    ],
+    stack: [
+      "Next.js",
+      "FastAPI",
+      "PostgreSQL",
+      "YOLOv8",
+      "OpenCV",
+      "PaddleOCR",
+    ],
+    github: "https://github.com/varshithdepa45/SolarIQ",
+    accent: "from-amber-400 via-orange-500 to-red-500",
+    icon: Sun,
   },
 ];
 
