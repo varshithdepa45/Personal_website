@@ -8,8 +8,7 @@ import {
   Database,
   Wrench,
   MapPin,
-  Truck,
-  Sun,
+  ShieldCheck,
   Rocket,
   Trophy,
   GitBranch,
@@ -142,6 +141,24 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: "kavach-ai",
+    title: "KAVACH AI",
+    tagline: "Sovereign Intelligence. Secured On-Premise",
+    description:
+      "A self-hosted, air-gapped agentic AI workbench for confidential industrial work, built on open-weight multimodal LLMs.",
+    features: [
+      "Secure on-premise AI workflows",
+      "Agentic task routing and planning",
+      "Multimodal document and evidence analysis",
+      "Local knowledge-base retrieval",
+      "Human-in-the-loop approval gates",
+    ],
+    stack: ["TypeScript", "Python", "Next.js", "AI Agents", "Multimodal LLMs"],
+    github: "https://github.com/varshithdepa45/KAVACH-AI",
+    accent: "from-red-500 via-orange-500 to-amber-400",
+    icon: ShieldCheck,
+  },
+  {
     id: "tracenet",
     title: "TraceNet AI",
     tagline: "Geo-Intelligent Lost & Found Recovery Platform",
@@ -159,42 +176,6 @@ export const PROJECTS: Project[] = [
     demo: "https://varshithdepa45.github.io/Tracenet-ai/",
     accent: "from-blue-500 via-purple-500 to-fuchsia-500",
     icon: MapPin,
-  },
-  {
-    id: "logistics",
-    title: "AI Logistics Dispatch",
-    tagline: "Intelligent Order Reassignment & Delay Prediction",
-    description:
-      "A logistics platform that uses ML to predict shipment delays and intelligently reassigns orders to the optimal driver based on live conditions and history.",
-    features: [
-      "Intelligent order reassignment",
-      "ML-based delay prediction",
-      "Driver management dashboard",
-      "Live order tracking with ETA",
-      "Performance analytics & SLAs",
-    ],
-    stack: ["React", "Node.js", "Express", "Python", "PostgreSQL", "Socket.IO"],
-    github: "https://github.com/varshithdepa45/Smart-logistics",
-    accent: "from-cyan-400 via-blue-500 to-purple-500",
-    icon: Truck,
-  },
-  {
-    id: "solar",
-    title: "Solar Panel Fault Detection",
-    tagline: "AI-Powered Solar Diagnostics & Predictive Maintenance",
-    description:
-      "Computer vision system that analyzes thermal & RGB imagery from solar farms to detect micro-cracks, hotspots, and degradation before they become failures.",
-    features: [
-      "AI-powered solar diagnostics",
-      "Real-time monitoring dashboard",
-      "Predictive maintenance alerts",
-      "Performance & yield analytics",
-      "Drone imagery integration",
-    ],
-    stack: ["Python", "OpenCV", "PyTorch", "FastAPI", "Next.js", "Firebase"],
-    github: "https://github.com/varshithdepa45/solar-2",
-    accent: "from-amber-400 via-pink-500 to-purple-500",
-    icon: Sun,
   },
 ];
 
