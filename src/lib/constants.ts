@@ -177,6 +177,24 @@ export const PROJECTS: Project[] = [
     accent: "from-blue-500 via-purple-500 to-fuchsia-500",
     icon: MapPin,
   },
+  {
+    id: "collections-360",
+    title: "Collections 360",
+    tagline: "Trusted Banking Collections Intelligence",
+    description:
+      "A unified collections intelligence platform that turns fragmented banking data into a trusted 360-degree record, answers questions in plain English, and recommends next-best actions with reasons.",
+    features: [
+      "Golden C360 record with survivorship and lineage",
+      "Grounded plain-English Q&A with SQL sources",
+      "Feature store with certified text classifiers",
+      "Uplift-based next-best-action recommendations",
+      "Policy gates, audit logs, and human approvals",
+    ],
+    stack: ["Python", "SQL", "DuckDB", "BM25", "LLM Agents", "Streamlit"],
+    github: "https://github.com/varshithdepa45/IIITh_INFINIUM_2026",
+    accent: "from-emerald-400 via-cyan-500 to-blue-500",
+    icon: Database,
+  },
 ];
 
 export const TIMELINE: TimelineEntry[] = [
