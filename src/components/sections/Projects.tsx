@@ -35,7 +35,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               project.accent
             )}
           />
-          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[22px] bg-gradient-to-br from-[#0d0d18] via-[#0a0a14] to-[#0d0d18]">
+          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[22px] bg-gradient-to-br from-[#252019] via-[#17130f] to-[#201a14]">
             {/* Window chrome */}
             <div className="flex items-center gap-1.5 border-b border-white/5 px-4 py-3">
               <span className="h-2.5 w-2.5 rounded-full bg-red-400/60" />
@@ -64,7 +64,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                   transition={{ duration: 0.4, ease: "easeOut" }}
                   className="relative w-full max-w-md"
                 >
-                  <div className="rounded-2xl border border-white/10 bg-black/50 p-6 backdrop-blur-xl shadow-2xl">
+                  <div className="rounded-2xl border border-white/10 bg-[#15110d]/90 p-6 shadow-2xl">
                     <div className="mb-4 flex items-center gap-3">
                       <div
                         className={cn(
@@ -89,7 +89,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                           key={feat}
                           className="flex items-center gap-2 rounded-lg border border-white/5 bg-white/[0.03] px-3 py-2 text-xs text-white/75"
                         >
-                          <Sparkles className="h-3 w-3 text-purple-300" />
+                          <Sparkles className="h-3 w-3 text-amber-300" />
                           {feat}
                         </div>
                       ))}

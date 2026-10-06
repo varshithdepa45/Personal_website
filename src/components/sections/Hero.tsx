@@ -34,16 +34,16 @@ export function Hero() {
       {/* Floating glowing blobs */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-20 top-32 h-[420px] w-[420px] animate-float-slow rounded-full bg-blue-500/20 blur-[120px]"
+        className="pointer-events-none absolute -left-20 top-32 h-[420px] w-[420px] rounded-full bg-orange-700/10 blur-[120px]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-32 top-1/3 h-[480px] w-[480px] animate-float-slow rounded-full bg-fuchsia-500/20 blur-[140px]"
+        className="pointer-events-none absolute -right-32 top-1/3 h-[480px] w-[480px] rounded-full bg-amber-700/10 blur-[140px]"
         style={{ animationDelay: "-4s" }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute bottom-0 left-1/3 h-[300px] w-[300px] animate-float-slow rounded-full bg-purple-600/20 blur-[120px]"
+        className="pointer-events-none absolute bottom-0 left-1/3 h-[300px] w-[300px] rounded-full bg-stone-500/10 blur-[120px]"
         style={{ animationDelay: "-8s" }}
       />
 
@@ -55,7 +55,7 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-white/80 backdrop-blur-md"
           >
-            <Sparkles className="h-3.5 w-3.5 text-purple-400" />
+            <Sparkles className="h-3.5 w-3.5 text-amber-300" />
             <span>Available for internships &amp; collaborations</span>
             <span className="ml-1 flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]" />
           </motion.div>
@@ -69,7 +69,7 @@ export function Hero() {
             Building{" "}
             <span className="relative inline-block">
               <span
-                className="bg-gradient-to-r from-blue-400 via-purple-400 to-fuchsia-400 bg-clip-text text-transparent"
+                className="bg-gradient-to-r from-amber-300 via-orange-300 to-stone-300 bg-clip-text text-transparent"
                 style={{
                   backgroundSize: "200% 200%",
                   animation: "gradient-shift 8s ease infinite",
@@ -134,10 +134,10 @@ export function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-purple-400/40 hover:text-white"
+                  className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:-translate-y-0.5 hover:border-amber-300/40 hover:text-white"
                 >
                   <social.icon className="h-4 w-4" />
-                  <span className="pointer-events-none absolute inset-0 rounded-full bg-purple-500/30 opacity-0 blur-md transition-opacity group-hover:opacity-100" />
+                  <span className="pointer-events-none absolute inset-0 rounded-full bg-amber-600/20 opacity-0 blur-md transition-opacity group-hover:opacity-100" />
                 </a>
               ))}
             </div>

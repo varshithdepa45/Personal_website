@@ -52,7 +52,7 @@ export function Navbar() {
           className={cn(
             "flex w-full max-w-5xl items-center justify-between gap-6 rounded-full border border-white/10 px-4 py-2.5 backdrop-blur-xl transition-all duration-500 sm:px-6",
             scrolled
-              ? "bg-black/60 shadow-2xl shadow-purple-500/10"
+              ? "bg-[#17130f]/90 shadow-xl shadow-black/20"
               : "bg-white/[0.03]"
           )}
         >
@@ -61,11 +61,11 @@ export function Navbar() {
             className="group relative flex items-center gap-2"
             aria-label="Home"
           >
-            <span className="relative flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-fuchsia-500/20 backdrop-blur-md transition-all group-hover:border-purple-400/40">
-              <span className="bg-gradient-to-r from-blue-300 to-fuchsia-300 bg-clip-text font-display text-sm font-bold text-transparent">
+            <span className="relative flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-amber-700/20 transition-all group-hover:border-amber-300/40">
+              <span className="bg-gradient-to-r from-amber-300 to-stone-300 bg-clip-text font-display text-sm font-bold text-transparent">
                 {SITE.initials}
               </span>
-              <span className="absolute inset-0 -z-10 rounded-xl bg-purple-500/40 opacity-0 blur-lg transition-opacity group-hover:opacity-60" />
+              <span className="absolute inset-0 -z-10 rounded-xl bg-amber-600/20 opacity-0 blur-lg transition-opacity group-hover:opacity-60" />
             </span>
           </button>
 
@@ -91,7 +91,7 @@ export function Navbar() {
                           stiffness: 380,
                           damping: 30,
                         }}
-                        className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-fuchsia-500/20 ring-1 ring-white/10"
+                        className="absolute inset-0 -z-10 rounded-full bg-amber-700/20 ring-1 ring-white/10"
                       />
                     )}
                     {item.label}

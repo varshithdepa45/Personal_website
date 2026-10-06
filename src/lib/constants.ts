@@ -156,7 +156,7 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["TypeScript", "Python", "Next.js", "AI Agents", "Multimodal LLMs"],
     github: "https://github.com/varshithdepa45/KAVACH-AI",
-    accent: "from-red-500 via-orange-500 to-amber-400",
+    accent: "from-amber-700 via-orange-600 to-stone-500",
     icon: ShieldCheck,
   },
   {
@@ -175,7 +175,7 @@ export const PROJECTS: Project[] = [
     stack: ["Next.js", "TypeScript", "Python", "TensorFlow", "MongoDB", "Mapbox"],
     github: "https://github.com/",
     demo: "https://varshithdepa45.github.io/Tracenet-ai/",
-    accent: "from-blue-500 via-purple-500 to-fuchsia-500",
+    accent: "from-slate-500 via-stone-500 to-amber-600",
     icon: MapPin,
   },
   {
@@ -193,7 +193,7 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["Python", "SQL", "DuckDB", "BM25", "LLM Agents", "Streamlit"],
     github: "https://github.com/varshithdepa45/IIITh_INFINIUM_2026",
-    accent: "from-emerald-400 via-cyan-500 to-blue-500",
+    accent: "from-emerald-700 via-teal-600 to-slate-500",
     icon: Database,
   },
   {
@@ -218,7 +218,7 @@ export const PROJECTS: Project[] = [
       "PaddleOCR",
     ],
     github: "https://github.com/varshithdepa45/SolarIQ",
-    accent: "from-amber-400 via-orange-500 to-red-500",
+    accent: "from-amber-600 via-orange-700 to-stone-600",
     icon: Sun,
   },
 ];

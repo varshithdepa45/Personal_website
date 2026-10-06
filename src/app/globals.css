@@ -4,27 +4,27 @@
 
 @layer base {
   :root {
-    --background: 240 10% 4%;
-    --foreground: 0 0% 98%;
+    --background: 32 18% 7%;
+    --foreground: 38 28% 93%;
 
-    --card: 240 10% 6%;
-    --card-foreground: 0 0% 98%;
+    --card: 30 14% 10%;
+    --card-foreground: 38 28% 93%;
 
-    --primary: 263 80% 65%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 28 72% 55%;
+    --primary-foreground: 28 25% 8%;
 
-    --secondary: 240 4% 16%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 32 12% 16%;
+    --secondary-foreground: 38 28% 93%;
 
-    --muted: 240 4% 16%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 32 12% 16%;
+    --muted-foreground: 35 12% 65%;
 
-    --accent: 263 80% 65%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 28 72% 55%;
+    --accent-foreground: 28 25% 8%;
 
-    --border: 240 6% 15%;
-    --input: 240 6% 15%;
-    --ring: 263 80% 65%;
+    --border: 32 11% 22%;
+    --input: 32 11% 22%;
+    --ring: 28 72% 55%;
 
     --radius: 0.75rem;
   }
@@ -40,15 +40,15 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    background-color: #07070c;
+    background-color: #17130f;
     font-feature-settings: "cv11", "ss01", "ss03";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    background: rgba(168, 85, 247, 0.35);
-    color: #fff;
+    background: rgba(190, 113, 55, 0.35);
+    color: #f8f1e5;
   }
 
   /* Custom scrollbar */
@@ -57,25 +57,25 @@
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #07070c;
+    background: #17130f;
   }
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #3b82f6, #a855f7);
+    background: #8e5a35;
     border-radius: 9999px;
     border: 2px solid #07070c;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #60a5fa, #c084fc);
+    background: #c0834d;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-blue-400 via-purple-400 to-fuchsia-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-amber-300 via-orange-300 to-stone-300 bg-clip-text text-transparent;
   }
 
   .glass {
-    @apply border border-white/10 bg-white/[0.03] backdrop-blur-xl;
+    @apply border border-white/10 bg-white/[0.04];
   }
 
   .glow-border {
@@ -89,9 +89,9 @@
     padding: 1px;
     background: linear-gradient(
       135deg,
-      rgba(59, 130, 246, 0.6),
-      rgba(168, 85, 247, 0.6),
-      rgba(236, 72, 153, 0.6)
+      rgba(190, 113, 55, 0.7),
+      rgba(125, 124, 91, 0.5),
+      rgba(208, 187, 148, 0.45)
     );
     -webkit-mask: linear-gradient(#000 0 0) content-box,
       linear-gradient(#000 0 0);
@@ -99,6 +99,52 @@
     mask-composite: exclude;
     pointer-events: none;
   }
+}
+
+/* Keep utility-driven accents grounded across the existing component library. */
+[class*="from-blue-"],
+[class*="from-purple-"],
+[class*="from-fuchsia-"],
+[class*="from-cyan-"],
+[class*="from-pink-"],
+[class*="from-emerald-"] {
+  --tw-gradient-from: #9a6a3a var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(154 106 58 / 0) var(--tw-gradient-to-position) !important;
+}
+
+[class*="via-purple-"],
+[class*="via-fuchsia-"],
+[class*="via-cyan-"],
+[class*="via-pink-"] {
+  --tw-gradient-stops: var(--tw-gradient-from), #85775a var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+[class*="to-purple-"],
+[class*="to-fuchsia-"],
+[class*="to-cyan-"],
+[class*="to-pink-"] {
+  --tw-gradient-to: #85775a var(--tw-gradient-to-position) !important;
+}
+
+[class*="bg-purple-"],
+[class*="bg-fuchsia-"],
+[class*="bg-blue-"],
+[class*="bg-cyan-"],
+[class*="bg-pink-"] {
+  background-color: rgb(154 106 58 / 0.16) !important;
+}
+
+[class*="text-purple-"],
+[class*="text-fuchsia-"],
+[class*="text-blue-"],
+[class*="text-cyan-"],
+[class*="text-pink-"] {
+  color: #d5ad78 !important;
+}
+
+[class*="shadow-purple-"],
+[class*="shadow-blue-"] {
+  --tw-shadow-color: rgb(92 67 43 / 0.22) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
